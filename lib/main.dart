@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/home.dart';
-import 'package:jtrznadel_portfolio/utils/constants.dart';
 
 void main() {
   runApp(const MyApp());

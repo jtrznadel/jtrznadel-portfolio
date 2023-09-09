@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 
 class NavBar extends StatelessWidget {
@@ -18,25 +19,59 @@ class NavBar extends StatelessWidget {
                   style: AppTextStyles.navBarTextStyle()
                       .copyWith(fontWeight: FontWeight.bold),
                   children: [
-                TextSpan(text: 'Trznadel', style: AppTextStyles.navBarTextStyle())
+                TextSpan(
+                    text: 'Trznadel', style: AppTextStyles.navBarTextStyle())
               ])),
           const Spacer(),
-          Text(
-            'home',
-            style: AppTextStyles.navBarTextStyle(),
+          GestureDetector(
+            onTap: () {
+              Scrollable.ensureVisible(
+                AppKeys.homeKey.currentContext!,
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.easeInOut,
+              );
+            },
+            child: Text(
+              'home',
+              style: AppTextStyles.navBarTextStyle(),
+            ),
           ),
           const SizedBox(
             width: 50,
           ),
-          Text('about me', style: AppTextStyles.navBarTextStyle()),
+          GestureDetector(
+              onTap: () {
+                Scrollable.ensureVisible(
+                  AppKeys.aboutMeKey.currentContext!,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: Text('about me', style: AppTextStyles.navBarTextStyle())),
           const SizedBox(
             width: 50,
           ),
-          Text('projects', style: AppTextStyles.navBarTextStyle()),
+          GestureDetector(
+              onTap: () {
+                Scrollable.ensureVisible(
+                  AppKeys.projectKey.currentContext!,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: Text('projects', style: AppTextStyles.navBarTextStyle())),
           const SizedBox(
             width: 50,
           ),
-          Text('contact', style: AppTextStyles.navBarTextStyle()),
+          GestureDetector(
+              onTap: () {
+                Scrollable.ensureVisible(
+                  AppKeys.contactKey.currentContext!,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child: Text('contact', style: AppTextStyles.navBarTextStyle())),
         ],
       ),
     );

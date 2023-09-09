@@ -4,11 +4,12 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
+import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HeadingWidget extends StatelessWidget {
-  const HeadingWidget({
+class HomeSection extends StatelessWidget {
+  const HomeSection({
     super.key,
   });
 
@@ -28,8 +29,10 @@ class HeadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width * 0.35,
+      key: AppKeys.homeKey,
+      height: size.height * 0.9, // - navbar height,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -74,9 +77,12 @@ class HeadingWidget extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Text(
-            'and i\'m a final year computer science student. i have done a number of projects which can be found below. currently looking for my first experience and a place to intern.',
-            style: AppTextStyles.primaryStyle(),
+          SizedBox(
+            width: size.width * 0.45,
+            child: Text(
+              'and i\'m a final year computer science student. i have done a number of projects which can be found below. currently looking for my first experience and a place to intern.',
+              style: AppTextStyles.primaryStyle(),
+            ),
           ),
           const SizedBox(
             height: 15,
@@ -106,7 +112,8 @@ class HeadingWidget extends StatelessWidget {
                 width: 15,
               ),
               IconButton(
-                onPressed: () => _launchUrl('https://www.instagram.com/bleiddze/'),
+                onPressed: () =>
+                    _launchUrl('https://www.instagram.com/bleiddze/'),
                 icon: const FaIcon(FontAwesomeIcons.instagram),
                 iconSize: 36,
                 color: Colors.white,
@@ -121,7 +128,8 @@ class HeadingWidget extends StatelessWidget {
               onPressed: () => downloadFile('assets/pdf/cv.pdf'),
               style: OutlinedButton.styleFrom(
                 side: BorderSide(color: AppColors.primaryColor, width: 2),
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
               ),
               child: Padding(
                 padding: const EdgeInsets.all(10.0),

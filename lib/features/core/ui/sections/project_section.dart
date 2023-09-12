@@ -11,29 +11,32 @@ class ProjectSection extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       key: AppKeys.projectKey,
-      height: size.height * 0.9, // - height of the navbar
+      height: size.height * 0.9,
+      width: double.infinity, // - height of the navbar
       child: Padding(
         padding: EdgeInsets.only(top: size.height * 0.1),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Text(
-                  'PROJECTS',
-                  style: AppTextStyles.headingStyle(),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                SizedBox(
-                  width: size.width * 0.3,
-                  child: Divider(
-                    thickness: 2,
-                    color: AppColors.primaryColor,
+            SizedBox(
+              width: size.width * 0.5,
+              child: Row(
+                children: [
+                  Text(
+                    'PROJECTS',
+                    style: AppTextStyles.headingStyle(),
                   ),
-                )
-              ],
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 2,
+                      color: AppColors.primaryColor,
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: size.height * 0.1,

@@ -12,73 +12,92 @@ class ContactSection extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       key: AppKeys.contactKey,
-      height: size.height * 0.9, // - height of the navbar
+      height:
+          size.height * 0.8, // - height of the navbar (0.1) - height of the footer (0.1)
+      width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.only(top: size.height * 0.1),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text(
-                  'CONTACT',
-                  style: AppTextStyles.headingStyle(),
+          padding: EdgeInsets.only(top: size.height * 0.1),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: size.width * 0.5,
+                child: Row(
+                  children: [
+                    Text(
+                      'CONTACT',
+                      style: AppTextStyles.headingStyle(),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    Expanded(
+                      child: Divider(
+                        thickness: 2,
+                        color: AppColors.primaryColor,
+                      ),
+                    )
+                  ],
                 ),
-                const SizedBox(
-                  width: 10,
-                ),
-                SizedBox(
-                  width: size.width * 0.3,
-                  child: Divider(
-                    thickness: 2,
-                    color: AppColors.primaryColor,
+              ),
+              SizedBox(
+                width: size.width * 0.5,
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  const SizedBox(
+                    height: 20,
                   ),
-                )
-              ],
-            ),
-            Text(
-              'ask for a question, hire me? Feel free to leave a message'
-                  .toUpperCase(),
-              style: AppTextStyles.primaryStyle(),
-            ),
-            SizedBox(
-              height: size.height * 0.1,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                OutlinedButton(
-                  onPressed: () {},
-                  style: AppWidgetTheme.customOutlinedButtonStyle,
-                  child: Text(
-                    'Contact by mail',
+                  Text(
+                    'Have a question or a project in mind? Feel free to leave a message',
                     style: AppTextStyles.primaryStyle(),
                   ),
-                ),
-                SizedBox(
-                  width: 200,
-                  child: Row(children: [
-                    Expanded(
-                      child: Divider(
-                        color: AppColors.primaryColor,
-                      ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Form(
+                    child: Column(
+                      children: [
+                        TextField(
+                            decoration: AppWidgetTheme.inputDecorationTheme
+                                .copyWith(labelText: '  Name  ')),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                            decoration: AppWidgetTheme.inputDecorationTheme
+                                .copyWith(labelText: '  Email  ')),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                            decoration: AppWidgetTheme.inputDecorationTheme
+                                .copyWith(labelText: '  Subject  ')),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                            maxLines: 5,
+                            decoration: AppWidgetTheme.inputDecorationTheme
+                                .copyWith(labelText: '  Message  ')),
+                      ],
                     ),
-                    Text(
-                      ' OR ',
-                      style: AppTextStyles.primaryStyle(),
-                    ),
-                    Expanded(
-                      child: Divider(
-                        color: AppColors.primaryColor,
-                      ),
-                    ),
-                  ]),
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Align(
+                    alignment: Alignment.center,
+                    child: OutlinedButton(
+                        style: AppWidgetTheme.customOutlinedButtonStyle,
+                        onPressed: () {},
+                        child: Text(
+                          'Send',
+                          style: AppTextStyles.primaryStyle(),
+                        )),
+                  )
+                ]),
+              ),
+            ],
+          )),
     );
   }
 }

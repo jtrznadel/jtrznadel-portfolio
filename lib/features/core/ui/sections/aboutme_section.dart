@@ -13,6 +13,7 @@ class AboutMeSection extends StatelessWidget {
     return SizedBox(
       key: AppKeys.aboutMeKey,
       height: size.height * 0.9, // - height of the navbar
+      width: double.infinity,
       child: Padding(
         padding: EdgeInsets.only(top: size.height * 0.1),
         child: Row(
@@ -59,8 +60,7 @@ class AboutMeSection extends StatelessWidget {
                     width: size.width * 0.2,
                     height: size.width * 0.3,
                     decoration: BoxDecoration(
-                        border:
-                            Border.all(color: AppColors.primaryColor, width: 2),
+                        border: Border.all(color: AppColors.primaryColor, width: 2),
                         color: AppColors.bgColor),
                   )),
                   Positioned(
@@ -70,8 +70,7 @@ class AboutMeSection extends StatelessWidget {
                       width: size.width * 0.2,
                       height: size.width * 0.3,
                       child: Image.asset('assets/images/portfolio_image.png',
-                          fit: BoxFit.cover,
-                          alignment: const Alignment(1.0, 0.5)),
+                          fit: BoxFit.cover, alignment: const Alignment(1.0, 0.5)),
                     ),
                   )
                 ]))

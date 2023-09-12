@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jtrznadel_portfolio/features/core/ui/widgets/social_buttons_widget.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
@@ -13,12 +14,6 @@ class HomeSection extends StatelessWidget {
   const HomeSection({
     super.key,
   });
-
-  Future<void> _launchUrl(String url) async {
-    if (!await launchUrl(Uri.parse(url))) {
-      throw Exception('Could not launch $url');
-    }
-  }
 
   downloadFile(url) {
     AnchorElement anchorElement = AnchorElement(href: url);
@@ -88,39 +83,10 @@ class HomeSection extends StatelessWidget {
           const SizedBox(
             height: 15,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              IconButton(
-                onPressed: () => _launchUrl('https://github.com/jtrznadel'),
-                icon: const FaIcon(FontAwesomeIcons.github),
-                iconSize: 36,
-                color: Colors.white,
-                hoverColor: AppColors.primaryColor,
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              IconButton(
-                onPressed: () =>
-                    _launchUrl('https://www.linkedin.com/in/jakub-trznadel7/'),
-                icon: const FaIcon(FontAwesomeIcons.linkedin),
-                iconSize: 36,
-                color: Colors.white,
-                hoverColor: AppColors.primaryColor,
-              ),
-              const SizedBox(
-                width: 15,
-              ),
-              IconButton(
-                onPressed: () =>
-                    _launchUrl('https://www.instagram.com/bleiddze/'),
-                icon: const FaIcon(FontAwesomeIcons.instagram),
-                iconSize: 36,
-                color: Colors.white,
-                hoverColor: AppColors.primaryColor,
-              ),
-            ],
+          SocialButtonsWidget(
+            iconSize: 36,
+            iconSpacer: 15,
+            hoverColor: AppColors.primaryColor,
           ),
           const SizedBox(
             height: 20,

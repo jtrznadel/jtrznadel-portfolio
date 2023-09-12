@@ -19,12 +19,11 @@ class NavBar extends StatelessWidget {
                   style: AppTextStyles.navBarTextStyle()
                       .copyWith(fontWeight: FontWeight.bold),
                   children: [
-                TextSpan(
-                    text: 'Trznadel', style: AppTextStyles.navBarTextStyle())
+                TextSpan(text: 'Trznadel', style: AppTextStyles.navBarTextStyle())
               ])),
           const Spacer(),
-          GestureDetector(
-            onTap: () {
+          TextButton(
+            onPressed: () {
               Scrollable.ensureVisible(
                 AppKeys.homeKey.currentContext!,
                 duration: const Duration(milliseconds: 500),
@@ -39,8 +38,8 @@ class NavBar extends StatelessWidget {
           const SizedBox(
             width: 50,
           ),
-          GestureDetector(
-              onTap: () {
+          TextButton(
+              onPressed: () {
                 Scrollable.ensureVisible(
                   AppKeys.aboutMeKey.currentContext!,
                   duration: const Duration(milliseconds: 500),
@@ -51,8 +50,8 @@ class NavBar extends StatelessWidget {
           const SizedBox(
             width: 50,
           ),
-          GestureDetector(
-              onTap: () {
+          TextButton(
+              onPressed: () {
                 Scrollable.ensureVisible(
                   AppKeys.projectKey.currentContext!,
                   duration: const Duration(milliseconds: 500),
@@ -63,8 +62,8 @@ class NavBar extends StatelessWidget {
           const SizedBox(
             width: 50,
           ),
-          GestureDetector(
-              onTap: () {
+          TextButton(
+              onPressed: () {
                 Scrollable.ensureVisible(
                   AppKeys.contactKey.currentContext!,
                   duration: const Duration(milliseconds: 500),

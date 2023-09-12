@@ -26,7 +26,7 @@ class AboutMeSection extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'About Me',
+                        'ABOUT ME',
                         style: AppTextStyles.headingStyle(),
                       ),
                       const SizedBox(
@@ -34,6 +34,7 @@ class AboutMeSection extends StatelessWidget {
                       ),
                       Expanded(
                         child: Divider(
+                          thickness: 2,
                           color: AppColors.primaryColor,
                         ),
                       )
@@ -58,7 +59,8 @@ class AboutMeSection extends StatelessWidget {
                     width: size.width * 0.2,
                     height: size.width * 0.3,
                     decoration: BoxDecoration(
-                        border: Border.all(color: AppColors.primaryColor),
+                        border:
+                            Border.all(color: AppColors.primaryColor, width: 2),
                         color: AppColors.bgColor),
                   )),
                   Positioned(

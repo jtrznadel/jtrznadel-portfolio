@@ -6,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
+import 'package:jtrznadel_portfolio/utils/app_widget_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeSection extends StatelessWidget {
@@ -126,24 +127,17 @@ class HomeSection extends StatelessWidget {
           ),
           OutlinedButton(
               onPressed: () => downloadFile('assets/pdf/cv.pdf'),
-              style: OutlinedButton.styleFrom(
-                side: BorderSide(color: AppColors.primaryColor, width: 2),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: RichText(
-                  text: TextSpan(
-                      text: 'Get my ',
-                      style: AppTextStyles.primaryStyle(),
-                      children: [
-                        TextSpan(
-                            text: 'CV',
-                            style: AppTextStyles.primaryStyle()
-                                .copyWith(color: AppColors.primaryColor))
-                      ]),
-                ),
+              style: AppWidgetTheme.customOutlinedButtonStyle,
+              child: RichText(
+                text: TextSpan(
+                    text: 'Get my ',
+                    style: AppTextStyles.primaryStyle(),
+                    children: [
+                      TextSpan(
+                          text: 'CV',
+                          style: AppTextStyles.primaryStyle()
+                              .copyWith(color: AppColors.primaryColor))
+                    ]),
               ))
         ],
       ),

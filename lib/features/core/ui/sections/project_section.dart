@@ -20,7 +20,7 @@ class ProjectSection extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Projects',
+                  'PROJECTS',
                   style: AppTextStyles.headingStyle(),
                 ),
                 const SizedBox(
@@ -29,6 +29,7 @@ class ProjectSection extends StatelessWidget {
                 SizedBox(
                   width: size.width * 0.3,
                   child: Divider(
+                    thickness: 2,
                     color: AppColors.primaryColor,
                   ),
                 )

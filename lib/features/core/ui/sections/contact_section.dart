@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
+import 'package:jtrznadel_portfolio/utils/app_widget_theme.dart';
 
 class ContactSection extends StatelessWidget {
   const ContactSection({super.key});
@@ -20,7 +21,7 @@ class ContactSection extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  'Contact',
+                  'CONTACT',
                   style: AppTextStyles.headingStyle(),
                 ),
                 const SizedBox(
@@ -29,17 +30,52 @@ class ContactSection extends StatelessWidget {
                 SizedBox(
                   width: size.width * 0.3,
                   child: Divider(
+                    thickness: 2,
                     color: AppColors.primaryColor,
                   ),
                 )
               ],
             ),
+            Text(
+              'ask for a question, hire me? Feel free to leave a message'
+                  .toUpperCase(),
+              style: AppTextStyles.primaryStyle(),
+            ),
             SizedBox(
               height: size.height * 0.1,
             ),
-            Text(
-                'I\'m Jakub Trznadel -  final year computer science student based in Rzeszow.',
-                style: AppTextStyles.primaryStyle()),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                OutlinedButton(
+                  onPressed: () {},
+                  style: AppWidgetTheme.customOutlinedButtonStyle,
+                  child: Text(
+                    'Contact by mail',
+                    style: AppTextStyles.primaryStyle(),
+                  ),
+                ),
+                SizedBox(
+                  width: 200,
+                  child: Row(children: [
+                    Expanded(
+                      child: Divider(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                    Text(
+                      ' OR ',
+                      style: AppTextStyles.primaryStyle(),
+                    ),
+                    Expanded(
+                      child: Divider(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ]),
+                ),
+              ],
+            )
           ],
         ),
       ),

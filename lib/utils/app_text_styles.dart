@@ -5,7 +5,10 @@ import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 class AppTextStyles {
   static TextStyle navBarTextStyle() {
     return GoogleFonts.montserrat(
-        fontSize: 24, fontWeight: FontWeight.w200, color: Colors.white, letterSpacing: 1);
+        fontSize: 24,
+        fontWeight: FontWeight.w200,
+        color: Colors.white,
+        letterSpacing: 1);
   }
 
   static TextStyle primaryStyle() {
@@ -17,12 +20,14 @@ class AppTextStyles {
   }
 
   static TextStyle headingStyle() {
-    return GoogleFonts.montserrat(
-        fontSize: 48, fontWeight: FontWeight.bold, color: AppColors.primaryColor);
+    return GoogleFonts.sourceSansPro(
+        fontSize: 64,
+        fontWeight: FontWeight.bold,
+        color: AppColors.primaryColor);
   }
 
   static TextStyle headingWhiteStyle() {
-    return GoogleFonts.montserrat(
-        fontSize: 48, fontWeight: FontWeight.bold, color: Colors.white);
+    return GoogleFonts.sourceSansPro(
+        fontSize: 64, fontWeight: FontWeight.bold, color: Colors.white);
   }
 }

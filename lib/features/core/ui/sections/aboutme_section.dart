@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
+import 'package:jtrznadel_portfolio/utils/app_texts.dart';
 
 class AboutMeSection extends StatelessWidget {
   const AboutMeSection({super.key});
@@ -14,32 +15,64 @@ class AboutMeSection extends StatelessWidget {
       height: size.height * 0.9, // - height of the navbar
       child: Padding(
         padding: EdgeInsets.only(top: size.height * 0.1),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                Text(
-                  'About Me',
-                  style: AppTextStyles.headingStyle(),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                SizedBox(
-                  width: size.width * 0.3,
-                  child: Divider(
-                    color: AppColors.primaryColor,
-                  ),
-                )
-              ],
-            ),
             SizedBox(
-              height: size.height * 0.1,
+              width: size.width * 0.5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(
+                        'About Me',
+                        style: AppTextStyles.headingStyle(),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: Divider(
+                          color: AppColors.primaryColor,
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: size.height * 0.05,
+                  ),
+                  Text(
+                    AppTexts.aboutMeText,
+                    style: AppTextStyles.primaryStyle(),
+                    textAlign: TextAlign.justify,
+                  ),
+                ],
+              ),
             ),
-            Text(
-                'I\'m Jakub Trznadel -  final year computer science student based in Rzeszow.',
-                style: AppTextStyles.primaryStyle()),
+            Container(
+                padding: const EdgeInsets.all(8),
+                child: Stack(clipBehavior: Clip.none, children: [
+                  Positioned(
+                      child: Container(
+                    width: size.width * 0.2,
+                    height: size.width * 0.3,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: AppColors.primaryColor),
+                        color: AppColors.bgColor),
+                  )),
+                  Positioned(
+                    bottom: 30,
+                    left: 30,
+                    child: SizedBox(
+                      width: size.width * 0.2,
+                      height: size.width * 0.3,
+                      child: Image.asset('assets/images/portfolio_image.png',
+                          fit: BoxFit.cover,
+                          alignment: const Alignment(1.0, 0.5)),
+                    ),
+                  )
+                ]))
           ],
         ),
       ),

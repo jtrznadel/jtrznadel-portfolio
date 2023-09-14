@@ -57,26 +57,30 @@ class ContactSection extends StatelessWidget {
                     child: Column(
                       children: [
                         TextField(
-                            decoration: AppWidgetTheme.inputDecorationTheme
+                            style: AppTextStyles.primaryStyle(),
+                            decoration: AppWidgetTheme.inputFormFieldDecorationTheme
                                 .copyWith(labelText: '  Name  ')),
                         const SizedBox(
                           height: 20,
                         ),
                         TextField(
-                            decoration: AppWidgetTheme.inputDecorationTheme
+                            style: AppTextStyles.primaryStyle(),
+                            decoration: AppWidgetTheme.inputFormFieldDecorationTheme
                                 .copyWith(labelText: '  Email  ')),
                         const SizedBox(
                           height: 20,
                         ),
                         TextField(
-                            decoration: AppWidgetTheme.inputDecorationTheme
+                            style: AppTextStyles.primaryStyle(),
+                            decoration: AppWidgetTheme.inputFormFieldDecorationTheme
                                 .copyWith(labelText: '  Subject  ')),
                         const SizedBox(
                           height: 20,
                         ),
                         TextField(
+                            style: AppTextStyles.primaryStyle(),
                             maxLines: 5,
-                            decoration: AppWidgetTheme.inputDecorationTheme
+                            decoration: AppWidgetTheme.inputFormFieldDecorationTheme
                                 .copyWith(labelText: '  Message  ')),
                       ],
                     ),

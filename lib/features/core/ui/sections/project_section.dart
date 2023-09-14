@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jtrznadel_portfolio/features/core/data/models/project_model.dart';
+import 'package:jtrznadel_portfolio/features/core/data/projects_mock.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
@@ -8,6 +10,7 @@ class ProjectSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final projects = ProjectsMock.getSampleProjects();
     final size = MediaQuery.of(context).size;
     return SizedBox(
       key: AppKeys.projectKey,
@@ -41,11 +44,46 @@ class ProjectSection extends StatelessWidget {
             SizedBox(
               height: size.height * 0.1,
             ),
-            Text(
-                'I\'m Jakub Trznadel -  final year computer science student based in Rzeszow.',
-                style: AppTextStyles.primaryStyle()),
+            Container(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: projects.length,
+                itemBuilder: (context, index) {
+                  final project = projects[index];
+                  return ProjectCard(project: project);
+                },
+              ),
+            )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class ProjectCard extends StatelessWidget {
+  final Project project;
+
+  const ProjectCard({super.key, required this.project});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Column(
+        children: [
+          Image.network(
+            'https://dreamwalk.com.au/wp-content/uploads/2022/02/app-ui-design-with-rounded-corners.jpeg',
+            fit: BoxFit.fill,
+            errorBuilder: (context, error, stackTrace) {
+              return Image.asset('put and image here');
+            },
+          ),
+          ListTile(
+            title: Text(project.name),
+            subtitle: Text(project.description),
+            trailing: const Icon(Icons.arrow_forward_ios),
+          ),
+        ],
       ),
     );
   }

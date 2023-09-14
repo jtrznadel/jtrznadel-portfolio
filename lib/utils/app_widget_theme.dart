@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
+import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 
 class AppWidgetTheme {
   static final ButtonStyle customOutlinedButtonStyle = OutlinedButton.styleFrom(
@@ -14,13 +15,13 @@ class AppWidgetTheme {
       foregroundColor: AppColors.primaryColor,
       padding: const EdgeInsets.all(20));
 
-  static InputDecoration inputDecorationTheme = InputDecoration(
+  static InputDecoration inputFormFieldDecorationTheme = InputDecoration(
       border: OutlineInputBorder(borderRadius: BorderRadius.circular(5)),
       enabledBorder:
           OutlineInputBorder(borderSide: BorderSide(color: AppColors.primaryColor)),
       prefixIconColor: AppColors.primaryColor,
       floatingLabelStyle: TextStyle(color: AppColors.primaryColor),
-      labelStyle: TextStyle(color: AppColors.primaryColor),
+      labelStyle: AppTextStyles.primaryStyle(),
       floatingLabelBehavior: FloatingLabelBehavior.always,
       focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(width: 2.0, color: AppColors.primaryColor),

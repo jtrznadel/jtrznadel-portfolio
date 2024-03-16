@@ -19,7 +19,6 @@ class ProjectsMock {
         imageUrl:
             'https://dreamwalk.com.au/wp-content/uploads/2022/02/app-ui-design-with-rounded-corners.jpeg',
       ),
-      // Możesz dodać więcej przykładowych projektów według tego wzoru
     ];
   }
 }

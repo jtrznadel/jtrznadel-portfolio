@@ -14,48 +14,45 @@ class ProjectSection extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       key: AppKeys.projectKey,
-      height: size.height * 0.9,
-      width: double.infinity, // - height of the navbar
-      child: Padding(
-        padding: EdgeInsets.only(top: size.height * 0.1),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              width: size.width * 0.5,
-              child: Row(
-                children: [
-                  Text(
-                    'PROJECTS',
-                    style: AppTextStyles.headingStyle(),
+      height: size.height * 0.92,
+      width: double.infinity,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: size.width * 0.5,
+            child: Row(
+              children: [
+                Text(
+                  'PROJECTS',
+                  style: AppTextStyles.headingStyle(),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Expanded(
+                  child: Divider(
+                    thickness: 2,
+                    color: AppColors.primaryColor,
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Expanded(
-                    child: Divider(
-                      thickness: 2,
-                      color: AppColors.primaryColor,
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
-            SizedBox(
-              height: size.height * 0.1,
-            ),
-            Container(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: projects.length,
-                itemBuilder: (context, index) {
-                  final project = projects[index];
-                  return ProjectCard(project: project);
-                },
-              ),
-            )
-          ],
-        ),
+          ),
+          SizedBox(
+            height: size.height * 0.1,
+          ),
+          // Container(
+          //   child: ListView.builder(
+          //     shrinkWrap: true,
+          //     itemCount: projects.length,
+          //     itemBuilder: (context, index) {
+          //       final project = projects[index];
+          //       return ProjectCard(project: project);
+          //     },
+          //   ),
+          // )
+        ],
       ),
     );
   }

@@ -19,7 +19,8 @@ class NavBar extends StatelessWidget {
                   style: AppTextStyles.navBarTextStyle()
                       .copyWith(fontWeight: FontWeight.bold),
                   children: [
-                TextSpan(text: 'Trznadel', style: AppTextStyles.navBarTextStyle())
+                TextSpan(
+                    text: 'Trznadel', style: AppTextStyles.navBarTextStyle())
               ])),
           const Spacer(),
           TextButton(
@@ -47,6 +48,19 @@ class NavBar extends StatelessWidget {
                 );
               },
               child: Text('about me', style: AppTextStyles.navBarTextStyle())),
+          const SizedBox(
+            width: 50,
+          ),
+          TextButton(
+              onPressed: () {
+                Scrollable.ensureVisible(
+                  AppKeys.technologiesKey.currentContext!,
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                );
+              },
+              child:
+                  Text('technologies', style: AppTextStyles.navBarTextStyle())),
           const SizedBox(
             width: 50,
           ),

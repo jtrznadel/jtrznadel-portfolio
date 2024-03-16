@@ -5,8 +5,8 @@ import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 class AppTextStyles {
   static TextStyle navBarTextStyle() {
     return GoogleFonts.montserrat(
-        fontSize: 24,
-        fontWeight: FontWeight.w200,
+        fontSize: 18,
+        fontWeight: FontWeight.w400,
         color: Colors.white,
         letterSpacing: 1);
   }

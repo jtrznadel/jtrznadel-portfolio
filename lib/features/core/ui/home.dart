@@ -3,6 +3,7 @@ import 'package:jtrznadel_portfolio/features/core/ui/sections/aboutme_section.da
 import 'package:jtrznadel_portfolio/features/core/ui/sections/contact_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/home_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/project_section.dart';
+import 'package:jtrznadel_portfolio/features/core/ui/sections/technologies_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/footer_widget.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/nav_bar_widget.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: AppColors.bgColor,
         appBar: AppBar(
-          toolbarHeight: size.height * 0.1,
+          toolbarHeight: size.height * 0.08,
           title: const NavBar(),
           backgroundColor: AppColors.bgColor,
         ),
@@ -63,6 +64,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 HomeSection(),
                 AboutMeSection(),
+                TechnologiesSection(),
                 ProjectSection(),
                 ContactSection(),
                 FooterWidget(),

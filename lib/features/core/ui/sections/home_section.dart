@@ -2,13 +2,11 @@ import 'dart:html';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/social_buttons_widget.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 import 'package:jtrznadel_portfolio/utils/app_widget_theme.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({
@@ -26,7 +24,7 @@ class HomeSection extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       key: AppKeys.homeKey,
-      height: size.height * 0.9, // - navbar height,
+      height: size.height * 0.92, // - navbar height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,

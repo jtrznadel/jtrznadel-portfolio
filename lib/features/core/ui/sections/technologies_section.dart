@@ -4,14 +4,14 @@ import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 import 'package:jtrznadel_portfolio/utils/app_texts.dart';
 
-class AboutMeSection extends StatelessWidget {
-  const AboutMeSection({super.key});
+class TechnologiesSection extends StatelessWidget {
+  const TechnologiesSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return SizedBox(
-      key: AppKeys.aboutMeKey,
+      key: AppKeys.technologiesKey,
       height: size.height * 0.92, // - height of the navbar
       width: double.infinity,
       child: Row(
@@ -25,7 +25,7 @@ class AboutMeSection extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'ABOUT ME',
+                      'TECHNOLOGIES',
                       style: AppTextStyles.headingStyle(),
                     ),
                     const SizedBox(

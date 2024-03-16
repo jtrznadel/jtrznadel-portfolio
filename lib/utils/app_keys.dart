@@ -5,4 +5,5 @@ class AppKeys {
   static GlobalKey aboutMeKey = GlobalKey();
   static GlobalKey projectKey = GlobalKey();
   static GlobalKey contactKey = GlobalKey();
+  static GlobalKey technologiesKey = GlobalKey();
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/social_buttons_widget.dart';
-import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 
 class FooterWidget extends StatelessWidget {

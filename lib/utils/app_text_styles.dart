@@ -4,18 +4,26 @@ import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 
 class AppTextStyles {
   static TextStyle navBarTextStyle() {
-    return GoogleFonts.montserrat(
+    return GoogleFonts.sourceSansPro(
         fontSize: 18,
+        fontWeight: FontWeight.w600,
+        color: AppColors.primaryTextColor,
+        letterSpacing: 1);
+  }
+
+  static TextStyle footerTextStyle() {
+    return GoogleFonts.sourceSansPro(
+        fontSize: 14,
         fontWeight: FontWeight.w400,
-        color: Colors.white,
+        color: AppColors.palmTextColor,
         letterSpacing: 1);
   }
 
   static TextStyle primaryStyle() {
-    return GoogleFonts.montserrat(
+    return GoogleFonts.sourceSansPro(
       fontSize: 18,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: AppColors.primaryTextColor,
     );
   }
 
@@ -28,6 +36,9 @@ class AppTextStyles {
 
   static TextStyle headingWhiteStyle() {
     return GoogleFonts.sourceSansPro(
-        fontSize: 64, fontWeight: FontWeight.bold, color: Colors.white);
+      fontSize: 64,
+      fontWeight: FontWeight.bold,
+      color: AppColors.primaryTextColor,
+    );
   }
 }

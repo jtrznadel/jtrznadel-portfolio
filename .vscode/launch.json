@@ -7,7 +7,11 @@
         {
             "name": "jtrznadel-portfolio",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": [
+                "-d",
+                "chrome"
+            ]
         },
         {
             "name": "jtrznadel-portfolio (profile mode)",

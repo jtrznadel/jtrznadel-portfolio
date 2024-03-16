@@ -5,8 +5,9 @@ import 'package:jtrznadel_portfolio/features/core/ui/sections/home_section.dart'
 import 'package:jtrznadel_portfolio/features/core/ui/sections/project_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/technologies_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/footer_widget.dart';
-import 'package:jtrznadel_portfolio/features/core/ui/widgets/nav_bar_widget.dart';
+import 'package:jtrznadel_portfolio/features/core/ui/sections/navbar/navbar.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
+import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     _scrollController = ScrollController()
       ..addListener(() {
         setState(() {
-          if (_scrollController.offset >= 400) {
+          if (_scrollController.offset >= 500) {
             _showBackToTopButton = true;
           } else {
             _showBackToTopButton = false;
@@ -55,20 +56,32 @@ class _HomePageState extends State<HomePage> {
           toolbarHeight: size.height * 0.08,
           title: const NavBar(),
           backgroundColor: AppColors.bgColor,
+          scrolledUnderElevation: 0,
+          shape: Border(
+            bottom: BorderSide(
+              color: AppColors.primaryColor,
+              width: 1,
+            ),
+          ),
         ),
-        body: SingleChildScrollView(
+        body: WebSmoothScroll(
           controller: _scrollController,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
-            child: const Column(
-              children: [
-                HomeSection(),
-                AboutMeSection(),
-                TechnologiesSection(),
-                ProjectSection(),
-                ContactSection(),
-                FooterWidget(),
-              ],
+          scrollOffset: 150,
+          child: SingleChildScrollView(
+            controller: _scrollController,
+            physics: const NeverScrollableScrollPhysics(),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
+              child: const Column(
+                children: [
+                  HomeSection(),
+                  AboutMeSection(),
+                  TechnologiesSection(),
+                  ProjectsSection(),
+                  ContactSection(),
+                  FooterWidget(),
+                ],
+              ),
             ),
           ),
         ),

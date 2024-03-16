@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/social_buttons_widget.dart';
+import 'package:jtrznadel_portfolio/utils/app_colors.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 
 class FooterWidget extends StatelessWidget {
@@ -10,17 +11,19 @@ class FooterWidget extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SizedBox(
       height: size.height * 0.1,
+      width: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            '© 2023 Built by Jakub Trznadel',
-            style: AppTextStyles.primaryStyle(),
+            '© 2024 Built by Jakub Trznadel',
+            style: AppTextStyles.footerTextStyle(),
           ),
-          const SocialButtonsWidget(
+          SocialButtonsWidget(
             iconSize: 24,
             iconSpacer: 5,
             hoverColor: Colors.transparent,
+            color: AppColors.palmTextColor,
           )
         ],
       ),

@@ -8,11 +8,13 @@ class SocialButtonsWidget extends StatelessWidget {
     required this.iconSize,
     required this.iconSpacer,
     required this.hoverColor,
+    required this.color,
   });
 
   final double iconSize;
   final double iconSpacer;
   final Color hoverColor;
+  final Color color;
 
   Future<void> _launchUrl(String url) async {
     if (!await launchUrl(Uri.parse(url))) {
@@ -30,17 +32,18 @@ class SocialButtonsWidget extends StatelessWidget {
             onPressed: () => _launchUrl('https://github.com/jtrznadel'),
             icon: const FaIcon(FontAwesomeIcons.github),
             iconSize: iconSize,
-            color: Colors.white,
+            color: color,
             hoverColor: hoverColor,
           ),
           SizedBox(
             width: iconSpacer,
           ),
           IconButton(
-            onPressed: () => _launchUrl('https://www.linkedin.com/in/jakub-trznadel7/'),
+            onPressed: () =>
+                _launchUrl('https://www.linkedin.com/in/jakub-trznadel7/'),
             icon: const FaIcon(FontAwesomeIcons.linkedin),
             iconSize: iconSize,
-            color: Colors.white,
+            color: color,
             hoverColor: hoverColor,
           ),
           SizedBox(
@@ -50,7 +53,7 @@ class SocialButtonsWidget extends StatelessWidget {
             onPressed: () => _launchUrl('https://www.instagram.com/bleiddze/'),
             icon: const FaIcon(FontAwesomeIcons.instagram),
             iconSize: iconSize,
-            color: Colors.white,
+            color: color,
             hoverColor: hoverColor,
           ),
         ],

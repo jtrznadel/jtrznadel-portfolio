@@ -24,6 +24,7 @@ class HeaderWidget extends StatelessWidget {
           : size.height * 0.92, // - height of the navbar
       width: double.infinity,
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Row(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/aboutme_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/contact_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/home_section.dart';
-import 'package:jtrznadel_portfolio/features/core/ui/sections/project_section.dart';
+import 'package:jtrznadel_portfolio/features/core/ui/sections/projects/project_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/technologies_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/footer_widget.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/navbar/navbar.dart';

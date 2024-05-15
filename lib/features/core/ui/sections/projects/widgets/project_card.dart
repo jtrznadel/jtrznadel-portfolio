@@ -22,75 +22,52 @@ class ProjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
-      color: Colors.red,
+    return Padding(
       padding: const EdgeInsets.all(30),
-      child: Stack(
-        alignment: Alignment.bottomCenter,
-        clipBehavior: Clip.none,
-        children: [
-          Positioned(
-            left: 30,
-            top: 30,
-            child: Container(
-              height: size.height * .5,
-              width: size.width * .5,
-              decoration: BoxDecoration(
-                color: AppColors.bgColor,
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(
-                  color: AppColors.primaryColor,
-                ),
-              ),
-            ),
+      child: Container(
+        height: size.height * .5,
+        width: size.width * .5,
+        decoration: BoxDecoration(
+          color: AppColors.bgColor,
+          borderRadius: BorderRadius.circular(25),
+          border: Border.all(
+            color: AppColors.primaryColor,
           ),
-          Positioned(
-            left: 30,
-            top: 30,
-            child: Container(
-              height: size.height * .5,
-              width: size.width * .5,
-              decoration: BoxDecoration(
-                color: color,
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    image,
-                    fit: BoxFit.cover,
-                  ),
-                  Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        top: 15,
-                        right: 30,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            title,
-                            style: AppTextStyles.headingStyle().copyWith(
-                              color: AppColors.secondaryTextColor,
-                            ),
-                          ),
-                          Text(
-                            description,
-                            textAlign: TextAlign.justify,
-                            style: AppTextStyles.primaryStyle().copyWith(
-                              color: AppColors.secondaryTextColor,
-                            ),
-                          ),
-                        ],
+        ),
+        child: Row(
+          children: [
+            Image.asset(
+              image,
+              fit: BoxFit.cover,
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 15,
+                  right: 30,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTextStyles.headingStyle().copyWith(
+                        color: AppColors.primaryTextColor,
                       ),
                     ),
-                  )
-                ],
+                    Text(
+                      description,
+                      textAlign: TextAlign.justify,
+                      style: AppTextStyles.primaryStyle().copyWith(
+                        color: AppColors.primaryTextColor,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

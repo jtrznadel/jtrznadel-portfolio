@@ -16,7 +16,7 @@ class HomeSection extends StatelessWidget {
 
   downloadFile(url) {
     AnchorElement anchorElement = AnchorElement(href: url);
-    anchorElement.download = "Jakub Trznadel - Mobile Developer - Resume.pdf";
+    anchorElement.download = "Jakub Trznadel-Mobile Developer-CV.pdf";
     anchorElement.click();
   }
 
@@ -51,15 +51,15 @@ class HomeSection extends StatelessWidget {
                     AnimatedTextKit(
                       animatedTexts: [
                         TyperAnimatedText(
-                          'Student',
-                          textStyle: AppTextStyles.headingStyle(),
-                        ),
-                        TyperAnimatedText(
-                          'Flutter Developer',
+                          'Mobile Developer',
                           textStyle: AppTextStyles.headingStyle(),
                         ),
                         TyperAnimatedText(
                           'Passionate Coder',
+                          textStyle: AppTextStyles.headingStyle(),
+                        ),
+                        TyperAnimatedText(
+                          'IT Student',
                           textStyle: AppTextStyles.headingStyle(),
                         ),
                       ],
@@ -85,8 +85,8 @@ class HomeSection extends StatelessWidget {
                   height: 20,
                 ),
                 OutlinedButton(
-                  onPressed: () => downloadFile(
-                      'assets/pdf/Jakub Trznadel - Mobile Developer - Resume.pdf'),
+                  onPressed: () =>
+                      downloadFile('Jakub_Trznadel_Mobile_Developer.pdf'),
                   style: AppWidgetTheme.customOutlinedButtonStyle,
                   child: RichText(
                     text: TextSpan(

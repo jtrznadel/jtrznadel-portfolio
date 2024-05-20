@@ -49,9 +49,9 @@ class AboutMeSection extends StatelessWidget {
                       child: SizedBox(
                         width: size.width * 0.2,
                         height: size.width * 0.3,
-                        child: Image.asset('assets/images/portfolio_image.png',
+                        child: Image.asset('assets/images/portfolio_image.jpg',
                             fit: BoxFit.cover,
-                            alignment: const Alignment(1.0, 0.5)),
+                            alignment: const Alignment(.5, .3)),
                       ),
                     )
                   ],

@@ -8,16 +8,20 @@ import 'package:jtrznadel_portfolio/utils/app_keys.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 import 'package:jtrznadel_portfolio/utils/app_widget_theme.dart';
 import 'package:lottie/lottie.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({
     super.key,
   });
 
-  downloadFile(url) {
-    AnchorElement anchorElement = AnchorElement(href: url);
-    anchorElement.download = "Jakub Trznadel-Mobile Developer-CV.pdf";
-    anchorElement.click();
+  Future<void> openUrl(String url) async {
+    final uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   @override
@@ -36,7 +40,7 @@ class HomeSection extends StatelessWidget {
               children: [
                 Text(
                   'hi, my name is',
-                  style: AppTextStyles.primaryStyle(),
+                  style: AppTextStyles.subheadingStyle(),
                 ),
                 Text(
                   'Jakub.',
@@ -75,34 +79,45 @@ class HomeSection extends StatelessWidget {
                 //   ),
                 // ),
 
-                SocialButtonsWidget(
-                  iconSize: 36,
-                  iconSpacer: 15,
-                  hoverColor: AppColors.primaryColor,
-                  color: AppColors.primaryTextColor,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                OutlinedButton(
-                  onPressed: () =>
-                      downloadFile('Jakub_Trznadel_Mobile_Developer.pdf'),
-                  style: AppWidgetTheme.customOutlinedButtonStyle,
-                  child: RichText(
-                    text: TextSpan(
-                      text: 'Get my ',
-                      style: AppTextStyles.primaryStyle(),
-                      children: [
-                        TextSpan(
-                          text: 'CV',
-                          style: AppTextStyles.primaryStyle().copyWith(
-                            color: AppColors.primaryColor,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        )
-                      ],
+                Row(
+                  children: [
+                    SocialButtonsWidget(
+                      iconSize: 36,
+                      iconSpacer: 15,
+                      hoverColor: AppColors.primaryColor,
+                      color: AppColors.primaryTextColor,
                     ),
-                  ),
+                    // const SizedBox(
+                    //   width: 50,
+                    // ),
+                    // ElevatedButton(
+                    //   onPressed: () async => openUrl(
+                    //       'https://drive.google.com/file/d/1ajwnUjPs2TSgUifQFwVzop5z8P_CReI9/view'),
+                    //   style: ElevatedButton.styleFrom(
+                    //     shape: const StadiumBorder(),
+                    //     padding: const EdgeInsets.symmetric(
+                    //       horizontal: 30,
+                    //       vertical: 15,
+                    //     ),
+                    //     backgroundColor: AppColors.whiteColor,
+                    //     elevation: 5,
+                    //   ),
+                    //   child: RichText(
+                    //     text: TextSpan(
+                    //       text: 'Get my ',
+                    //       style: AppTextStyles.subheadingStyle(),
+                    //       children: [
+                    //         TextSpan(
+                    //           text: 'CV',
+                    //           style: AppTextStyles.subheadingStyle().copyWith(
+                    //             color: AppColors.primaryColor,
+                    //           ),
+                    //         )
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
+                  ],
                 ),
               ],
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jtrznadel_portfolio/utils/app_functions.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialButtonsWidget extends StatelessWidget {
@@ -16,12 +17,6 @@ class SocialButtonsWidget extends StatelessWidget {
   final Color hoverColor;
   final Color color;
 
-  Future<void> _launchUrl(String url) async {
-    if (!await launchUrl(Uri.parse(url))) {
-      throw Exception('Could not launch $url');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -29,7 +24,7 @@ class SocialButtonsWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           IconButton(
-            onPressed: () => _launchUrl('https://github.com/jtrznadel'),
+            onPressed: () => openUrl('https://github.com/jtrznadel'),
             icon: const FaIcon(FontAwesomeIcons.github),
             iconSize: iconSize,
             color: color,
@@ -40,7 +35,7 @@ class SocialButtonsWidget extends StatelessWidget {
           ),
           IconButton(
             onPressed: () =>
-                _launchUrl('https://www.linkedin.com/in/jakub-trznadel7/'),
+                openUrl('https://www.linkedin.com/in/jakub-trznadel7/'),
             icon: const FaIcon(FontAwesomeIcons.linkedin),
             iconSize: iconSize,
             color: color,
@@ -50,7 +45,7 @@ class SocialButtonsWidget extends StatelessWidget {
             width: iconSpacer,
           ),
           IconButton(
-            onPressed: () => _launchUrl('https://www.instagram.com/bleiddze/'),
+            onPressed: () => openUrl('https://www.instagram.com/bleiddze/'),
             icon: const FaIcon(FontAwesomeIcons.instagram),
             iconSize: iconSize,
             color: color,

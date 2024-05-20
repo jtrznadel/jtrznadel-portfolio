@@ -3,7 +3,7 @@ import 'package:jtrznadel_portfolio/features/core/ui/sections/aboutme_section.da
 import 'package:jtrznadel_portfolio/features/core/ui/sections/contact_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/home_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/projects/project_section.dart';
-import 'package:jtrznadel_portfolio/features/core/ui/sections/technologies_section.dart';
+import 'package:jtrznadel_portfolio/features/core/ui/sections/technologies/technologies_section.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/widgets/footer_widget.dart';
 import 'package:jtrznadel_portfolio/features/core/ui/sections/navbar/navbar.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
@@ -59,17 +59,19 @@ class _HomePageState extends State<HomePage> {
           scrolledUnderElevation: 0,
           shape: Border(
             bottom: BorderSide(
-              color: AppColors.primaryColor,
+              color: AppColors.bgColor,
               width: 1,
             ),
           ),
         ),
         body: WebSmoothScroll(
           controller: _scrollController,
-          scrollOffset: 150,
+          scrollOffset: (size.height * 0.815).toInt(),
+          animationDuration: 600,
+          curve: Curves.easeInOutCirc,
           child: SingleChildScrollView(
-            controller: _scrollController,
             physics: const NeverScrollableScrollPhysics(),
+            controller: _scrollController,
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: size.width * 0.1),
               child: const Column(

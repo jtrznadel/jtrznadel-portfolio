@@ -14,38 +14,75 @@ class NavbarHoverButton extends StatefulWidget {
   _NavbarHoverButtonState createState() => _NavbarHoverButtonState();
 }
 
+// class _NavbarHoverButtonState extends State<NavbarHoverButton> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextButton(
+//       onPressed: () {
+//         Scrollable.ensureVisible(
+//           widget.navKey,
+//           duration: const Duration(milliseconds: 500),
+//           curve: Curves.easeInOut,
+//         );
+//       },
+//       child: RichText(
+//         text: TextSpan(
+//           text: '.',
+//           style: AppTextStyles.navBarTextStyle().copyWith(
+//             color: AppColors.primaryColor,
+//           ),
+//           children: [
+//             TextSpan(text: widget.text, style: AppTextStyles.navBarTextStyle())
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
+
 class _NavbarHoverButtonState extends State<NavbarHoverButton> {
   bool _isHovering = false;
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (event) => setState(() => _isHovering = true),
-      onExit: (event) => setState(() => _isHovering = false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250),
-        height: 40,
-        child: Stack(
-          alignment: Alignment.bottomCenter,
-          children: [
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 250),
-              curve: Curves.easeInOut,
-              width: _isHovering ? 50 : 0,
-              height: 2,
-              color: AppColors.primaryColor,
+    return TextButton(
+      onPressed: () {
+        Scrollable.ensureVisible(
+          widget.navKey,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      },
+      style: ButtonStyle(
+        overlayColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            return Colors.transparent;
+          },
+        ),
+      ),
+      child: MouseRegion(
+        onEnter: (event) => setState(() => _isHovering = true),
+        onExit: (event) => setState(() => _isHovering = false),
+        cursor: SystemMouseCursors.click,
+        child: RichText(
+          text: TextSpan(
+            text: '.',
+            style: AppTextStyles.navBarTextStyle().copyWith(
+              color: _isHovering
+                  ? AppColors.primaryTextColor
+                  : AppColors.primaryColor,
             ),
-            TextButton(
-              onPressed: () {
-                Scrollable.ensureVisible(
-                  widget.navKey,
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                );
-              },
-              child: Text(widget.text, style: AppTextStyles.navBarTextStyle()),
-            ),
-          ],
+            children: [
+              TextSpan(
+                text: widget.text,
+                style: AppTextStyles.navBarTextStyle().copyWith(
+                  color: _isHovering
+                      ? AppColors.primaryColor
+                      : AppColors.primaryTextColor,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

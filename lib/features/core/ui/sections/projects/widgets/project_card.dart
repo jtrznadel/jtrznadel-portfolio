@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:jtrznadel_portfolio/utils/app_colors.dart';
+import 'package:jtrznadel_portfolio/utils/app_functions.dart';
 import 'package:jtrznadel_portfolio/utils/app_text_styles.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -28,11 +30,14 @@ class ProjectCard extends StatelessWidget {
         height: size.height * .5,
         width: size.width * .5,
         decoration: BoxDecoration(
-          color: AppColors.bgColor,
+          color: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(25),
-          border: Border.all(
-            color: AppColors.primaryColor,
-          ),
+          boxShadow: [
+            BoxShadow(
+                offset: const Offset(0, 1),
+                blurRadius: 5,
+                color: Colors.black.withOpacity(.2)),
+          ],
         ),
         child: Row(
           children: [
@@ -42,12 +47,9 @@ class ProjectCard extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 15,
-                  right: 30,
-                ),
+                padding: const EdgeInsets.all(30),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       title,
@@ -56,11 +58,51 @@ class ProjectCard extends StatelessWidget {
                       ),
                     ),
                     Text(
+                      'Summary',
+                      style: AppTextStyles.primaryStyle().copyWith(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                    Text(
                       description,
                       textAlign: TextAlign.justify,
                       style: AppTextStyles.primaryStyle().copyWith(
                         color: AppColors.primaryTextColor,
                       ),
+                    ),
+                    const Spacer(),
+                    Row(
+                      children: [
+                        const Spacer(),
+                        ElevatedButton(
+                          onPressed: () {
+                            openUrl(
+                                'https://github.com/jtrznadel/socialease-app');
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: AppColors.primaryColor,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  'Check Repo',
+                                  style: AppTextStyles.primaryStyle(),
+                                ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
+                                const FaIcon(
+                                  FontAwesomeIcons.github,
+                                  color: Colors.black,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

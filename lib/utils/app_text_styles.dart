@@ -27,6 +27,14 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle subheadingStyle() {
+    return GoogleFonts.sourceSansPro(
+      fontSize: 24,
+      fontWeight: FontWeight.w600,
+      color: AppColors.primaryTextColor,
+    );
+  }
+
   static TextStyle headingStyle() {
     return GoogleFonts.sourceSansPro(
         fontSize: 64,
